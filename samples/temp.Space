@@ -1,0 +1,15 @@
+/*
+Created By: DiedRadish
+Latest Note: It's just a test file.
+*/
+namespace space {
+int main(string[] argv) {
+	//将程序名输出
+	Space::Console::print(argv[0]);
+	//作者
+	Space::console::print("DiedRadish");
+	return(0);
+}
+}
+
+123 /* abc
