@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <SpaceProjectDir>$(SolutionDir)..\..</SpaceProjectDir>
+  </PropertyGroup>
+  <PropertyGroup>
+    <IncludePath>$(SpaceProjectDir)\src\;$(IncludePath)</IncludePath>
+    <OutDir>$(SpaceProjectDir)\out\$(Configuration)_$(Platform)\</OutDir>
+    <IntDir>$(SpaceProjectDir)\out\$(Configuration)_$(Platform)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <Optimization>Full</Optimization>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="SpaceProjectDir">
+      <Value>$(SpaceProjectDir)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

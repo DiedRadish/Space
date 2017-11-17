@@ -31,6 +31,10 @@ int main(int argc, char* argv[]) {
 		re = Space::Info::Success;
 	}
 	std::cout << std::endl << "Result:" << (int)re;
+
+	/* 等待输入 */
+	char input;
+	std::cin >> input;
 }
 
 //进行构建的模块
