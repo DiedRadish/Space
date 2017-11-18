@@ -1,2 +1,5 @@
+#Visual Studio 的文件
 /build/vs2017/.vs/
+
+#生成的文件
 /out/

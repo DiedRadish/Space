@@ -10,9 +10,7 @@
     <IntDir>$(SpaceProjectDir)\out\$(Configuration)_$(Platform)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup>
-    <ClCompile>
-      <Optimization>Full</Optimization>
-    </ClCompile>
+    <ClCompile />
   </ItemDefinitionGroup>
   <ItemGroup>
     <BuildMacro Include="SpaceProjectDir">

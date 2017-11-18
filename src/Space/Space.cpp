@@ -4,13 +4,14 @@
 
 int main(int argc, char* argv[]) {
 	/* 输出命令行 */
-	for(int i = 0; i < argc; i++) {
-		std::cout << argv[i] << '\0';
-	}
-	std::cout << std::endl;
+	//for(int i = 0; i < argc; i++) {
+	//	std::cout << argv[i] << '\0';
+	//}
+	//std::cout << std::endl;
 
 	/* 初始化 */
 	std::vector<Space::Unit> t;
+
 	t.push_back(Space::Unit("build", "Compile the file.", {
 		Space::Argv("-", "File name.", "", true, true, false),
 		Space::Argv("-o", "Set the name of out file.", "a.space", true, false, true),
