@@ -2,4 +2,5 @@
 /build/vs2017/.vs/
 
 #生成的文件
-/out/
+/out/*
+!/out/.gitkeep
