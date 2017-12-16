@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{4B646398-7406-4CDF-BD61-1A5AB48982C0}</ProjectGuid>
     <RootNamespace>Space</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -121,11 +121,11 @@
     <ClCompile Include="..\..\..\src\Space\Space.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CommandLine\CommandLine.vcxproj">
+      <Project>{011316ce-5110-4df9-b43b-f4798237c2b6}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\Preprocess\Preprocess.vcxproj">
       <Project>{e33649b0-7d1f-483c-a124-e818047a46ac}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Shell\Shell.vcxproj">
-      <Project>{d0e9b92f-a144-4077-993f-3e8ecf774c90}</Project>
     </ProjectReference>
     <ProjectReference Include="..\Tools\Tools.vcxproj">
       <Project>{e378006d-bebc-4342-978e-ace6026de949}</Project>

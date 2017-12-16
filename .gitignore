@@ -1,5 +1,6 @@
 #Visual Studio 的文件
-/build/vs2017/.vs/
+*.ipch
+/build/vs2017/.vs/Space/v15/ipch/*
 
 #生成的文件
 /out/*
