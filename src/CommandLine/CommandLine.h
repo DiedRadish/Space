@@ -5,10 +5,8 @@
 
 #include<CommandLine/Unit.h>
 
-namespace Space
-{
-class CommandLine
-{
+namespace Space {
+class CommandLine {
 private:
 	CommandLine() = default;
 public:
@@ -21,11 +19,18 @@ private:
 	bool HasHelp;
 
 public:
-	std::vector<Space::Unit>::iterator AddUnit(Space::ID _id, Space::UnitCallback _cb);
-	void AddArgv(std::vector<Space::Unit>::iterator _Unit, Space::ID _id,
-		 std::string DefaultValue, bool HasValue, bool AllowRepeat, bool AllowEmpty);
+	std::vector<Space::Unit>::iterator AddUnit(Space::ID tID, Space::UnitCallback tCallback);
+	bool AddArgv(std::vector<Space::Unit>::iterator tUnit, Space::ID tID,
+				 std::string tDefaultValue,
+				 Space::ArgvType tType,
+				 bool tArrayType,
+				 bool tAllowDefaultValue);
 
 public:
-	Space::Info Scan(std::vector<std::string> _CommandLine);
+	Space::Info Scan(const std::vector<std::string>& CmdLine);
+
+public:
+	std::string HelpMessage(const std::vector<Space::Unit>::iterator tUnit);
+	std::string HelpMessage();
 };
 }
