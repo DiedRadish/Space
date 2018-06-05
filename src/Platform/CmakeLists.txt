@@ -1,0 +1,16 @@
+set(Platform_dir ${SpaceSrcDir}/Platform)
+
+if(WIN32)
+	include_directories(${Platform_dir}/Win)
+
+	set(Platform_src
+		${Platform_dir}/BasicFunc.cpp
+	)
+	set(Platform_h
+		${Platform_dir}/BasicFunc.h
+		${Platform_dir}/Platform.h
+		${Platform_dir}/Win/PlatformMacros.h
+	)
+
+	add_library(Platform STATIC ${Platform_src} ${Platform_h})
+endif(WIN32)
