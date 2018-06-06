@@ -25,3 +25,8 @@ void Space::Print(char* Msg, MsgType Type) {
 	Print(std::string(Msg), Type);
 	return;
 }
+
+void Space::Print(const char Msg, MsgType) {
+	Print(std::string(1, Msg));
+	return;
+}

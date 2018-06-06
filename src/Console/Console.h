@@ -5,6 +5,7 @@
 #include<map>
 #include<string>
 #include<vector>
+#include<exception>
 
 #include"ConsoleStruct.h"
 
@@ -16,15 +17,9 @@ private:
 public:
 	Console(std::string tInput, ConsoleStruct tStruct);
 	~Console() = default;
-
-	/* Base */
-public:
-	std::string Input;
-
-	/* Command */
 private:
+	std::string Input;
 	ConsoleStruct Struct;
-	//std::string CommandHelp();
 
 	/* Lexical Analysis*/
 private:
@@ -38,24 +33,22 @@ private:
 	};
 	std::vector<Token> Tokens;
 private:
-	void AddToken(Token::TokenType tType, std::string tName);
-	void Lex();
-private:
-	std::size_t Pos, Size;
+	std::size_t TokenPos, TokenSize;
 	char ThisChar, NextChar;
 	bool Next(char EndChar = '\0');
+private:
+	void AddToken(Token::TokenType tType, std::string tName);
+	bool Lex();
 
 	/* Syntax Analysis*/
-	class Node {
-	public:
-		std::string Name;
-		std::vector<Node*> Children;
-	public:
-		~Node() {
-			for(auto& t : Children) {
-				delete t;
-			}
-		}
-	};
+private:
+	std::size_t ParsePos;
+	bool ParseFlag;
+	bool Match(Token::TokenType tType);
+	bool MatchCommandName();
+	bool MatchArgName();
+	bool MatchArgValue();
+	bool Check(bool(Console::*tCall)(), bool Ignore = false);
+	bool Parse();
 };
 }

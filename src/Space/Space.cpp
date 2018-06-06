@@ -11,7 +11,14 @@ int main(int argc, char *argv[]) {
 		return 0;
 	}
 	Space::Print(argv[1]);
-	Space::Console cl(argv[1]);
+	Space::ConsoleStruct cs;
+	cs.AddCommand("build",
+				  [](Space::ConsoleStruct::AddArgCallback t) {
+					  t("-o");
+					  t("-t");
+				  }
+	);
+	Space::Console cl(argv[1], cs);
 
 	return 0;
 }
